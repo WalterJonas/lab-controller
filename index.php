@@ -9,7 +9,7 @@
 <body>
 <?php
     
-    echo "Aqui será a tela de login";
+    echo "Aqui será a tela de login...";
    
 ?>
 </body>
