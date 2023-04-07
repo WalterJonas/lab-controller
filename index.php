@@ -7,10 +7,10 @@
     <title>Index lab controller</title>
 </head>
 <body>
-<?php
-    
-    echo "Aqui será a tela de login...";
-   
-?>
+    <form action="model/buttonActions.php" method="POST">
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <input type="submit" name="login" value="Entrar">
+    </form>
 </body>
 </html>
