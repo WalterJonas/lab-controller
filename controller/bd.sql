@@ -17,3 +17,42 @@ CREATE TABLE concierge(
     modality varchar(30) NOT NULL,
     level varchar(30) NOT NULL
     );
+
+CREATE TABLE input(
+    id int PRIMARY key AUTO_INCREMENT,
+    lab varchar(30) NOT NULL,
+    name varchar(30) NOT NULL,
+    hour varchar(30) NOT NULL,
+    date varchar(30) NOT NULL
+    );
+    
+CREATE TABLE output(
+    id int PRIMARY key AUTO_INCREMENT,
+    lab varchar(30) NOT NULL,
+    name varchar(30) NOT NULL,
+    hour varchar(30) NOT NULL
+    );
+
+CREATE TABLE status(
+    id int PRIMARY key AUTO_INCREMENT,
+    lab varchar(30) NOT NULL,
+    situacao varchar(30) NOT NULL
+    );
+
+INSERT INTO status (lab, situacao)
+ VALUES ("307", "Vazio");
+
+INSERT INTO status (lab, situacao)
+ VALUES ("308", "Vazio");
+ 
+INSERT INTO status (lab, situacao)
+ VALUES ("309", "Vazio");
+
+ INSERT INTO status (lab, situacao)
+ VALUES ("311", "Vazio");
+
+ INSERT INTO status (lab, situacao)
+ VALUES ("312", "Vazio");
+
+ INSERT INTO status (lab, situacao)
+ VALUES ("313", "Vazio");

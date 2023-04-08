@@ -2,6 +2,8 @@
 
 class Concierge
 {
+	private $username;
+	private $password;
 
 	public function login($username, $password) //Email e senha por parametro
 	{
@@ -25,4 +27,22 @@ class Concierge
 			return false; //nao foi possivel logar (Não achou o email e senha no BD)
 		}
 	}
+
+	public function getUsername()
+    {
+        return $this->username;
+    }
+    public function setUsername($username)
+    {
+         $this->username = filter_var($username, FILTER_SANITIZE_STRIPPED);
+    }
+
+	public function getPassword()
+    {
+        return $this->password;
+    }
+    public function setPassword($password)
+    {
+         $this->password = filter_var($password, FILTER_SANITIZE_STRIPPED);
+    }
 }

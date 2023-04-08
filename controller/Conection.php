@@ -1,18 +1,15 @@
 <?php
 
-use \PDO;
-use \PDOException;
-
 class Conection
 {
 	public $msgErro = "";
 
-	public function conect($nome, $host, $usuario, $senha)
+	public function conect($name, $host, $user, $password)
 	{
 		global $pdo;
 		try
 		{
-			$pdo = new PDO("mysql:dbname=".$nome.";host=".$host, $usuario, $senha);
+			$pdo = new PDO("mysql:dbname=".$name.";host=".$host, $user, $password);
 		}
 		catch (PDOException $e) 
 		{
@@ -20,4 +17,3 @@ class Conection
 		}
 	}
 }
-?>

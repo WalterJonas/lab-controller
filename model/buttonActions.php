@@ -5,7 +5,7 @@
 
     if(isset($_POST['login'])) //Se o usuário clicar no botão 
     {
-        require_once "../model/Concierge.php";
+        require_once "../model/classes/Concierge.php";
         $concierge = new Concierge;         
         //php recebe os dados do formulário
         $username = addslashes($_POST["username"]);
@@ -29,7 +29,7 @@
 
     else if(isset($_POST['registerAuthorized'])) //Se o usuário clicar no botão 
     {
-        require_once "../model/Authorized.php";
+        require_once "../model/classes/Authorized.php";
         $authorized = new Authorized;      
         //php recebe os dados do formulário
         $lab = addslashes($_POST["lab"]);

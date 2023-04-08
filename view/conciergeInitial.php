@@ -7,6 +7,8 @@
     <title>Home Page</title>
 </head>
 <body>
+    <input type="search" placeholder="Buscar Laboratório" required>
+    <input type="submit" name="labSearch" >
     <?php
         echo "Aqui será a página inicial da portaria"; 
     ?>
