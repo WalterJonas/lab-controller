@@ -7,11 +7,10 @@
     <title>Home Page</title>
 </head>
 <body>
-    <input type="search" placeholder="Buscar Laboratório" required>
-    <input type="submit" name="labSearch" >
-    <?php
-        echo "Aqui será a página inicial da portaria"; 
-    ?>
+    <form action="checkin.php" method="post">
+        <input type="search" placeholder="Buscar Laboratório" name="lab" required>
+        <input type="submit" name="labSearch" >
+    </form>
     <a href="registerAuthorized.php">Cadastrar autorizados para acessar os laboratótios</a>
 </body>
 </html>

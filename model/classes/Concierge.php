@@ -11,8 +11,8 @@ class Concierge
 		$sql = $pdo->prepare("SELECT id FROM concierge WHERE username = :u AND password = :p"); //Comando sql
 
 		//Substitui as variáveis
-		$sql->bindValue(":u", $username);
-		$sql->bindValue(":p", $password);
+		$sql->bindValue(":u", $username, PDO::PARAM_STR);
+		$sql->bindValue(":p", $password, PDO::PARAM_STR);
 		$sql->execute(); //Executa o comando o sql e retorna alguma coisa
 		if($sql->rowCount()>0) //Conta a quantidade de linhas que retornou do BD (Se retornar algo ele vai logar)
 		{

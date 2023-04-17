@@ -11,16 +11,66 @@ class Authorized
 	public function register($lab, $name, $course, $modality, $level)
 	{		
 		global $pdo;	
-			$sql=$pdo->prepare("INSERT INTO authorized(lab, name, course, modality, level) VALUES(:l, :n, :c, :m, :le)"); //Comando sql (Inserir um registro)
+			$sql=$pdo->prepare("INSERT INTO authorized(lab, name, course, modality, level)
+             VALUES(:l, :n, :c, :m, :le)"); 
 			
-			//Substitui as variáveis
-			$sql->bindValue(":l", $lab);
-			$sql->bindValue(":n", $name);
-			$sql->bindValue(":c", $course);
-			$sql->bindValue(":m", $modality);
-			$sql->bindValue(":le", $level);
-			$sql->execute(); //Executa o comando o sql e retorna alguma coisa
-			return true; //Retorna true	
+			$sql->bindValue(":l", $lab, PDO::PARAM_STR);
+			$sql->bindValue(":n", $name, PDO::PARAM_STR);
+			$sql->bindValue(":c", $course, PDO::PARAM_STR);
+			$sql->bindValue(":m", $modality, PDO::PARAM_STR);
+			$sql->bindValue(":le", $level, PDO::PARAM_STR);
+			$sql->execute(); 
+			return true;
+	}
+    
+    public function listAuthorized($lab)
+	{        
+		global $pdo;
+		$sql=$pdo->prepare("SELECT id, lab, name, course, modality, level FROM authorized
+    	WHERE lab = :l"); 
+				
+		$sql->bindValue(":l", $lab, PDO::PARAM_STR);
+		$sql->execute(); 
+
+		$tableAuthorized="";
+		if($sql->rowCount()>0)
+		{
+			$tableAuthorized = "<center><table border=1>";
+			$tableAuthorized.="
+			<tr>
+                <td>Selecione</td>				
+				<td>Lab</td>
+				<td>Nome</td>
+				<td>Curso</td>
+                <td>Modalidade</td>
+                <td>Nível</td>
+			</tr>";
+			while(list($id, $lab, $name, $course, $modality, $level)=$sql->fetch())
+			{
+            	$tableAuthorized.="           			
+		        <tr>
+                    <td><center><input type='radio' name='id' value='$id'></td>
+		            <td>$lab</td>
+		            <td>$name</td>
+		            <td>$course</td>
+                    <td>$modality</td>
+                    <td>$level</td>
+		        </tr>";
+			}
+			$tableAuthorized.="</table>";
+
+			if($tableAuthorized!="")
+			{
+				
+				echo $tableAuthorized;	
+											
+				return true;     				
+			}
+			else
+			{
+				return false;
+			}
+		}			
 	}
 
 	public function getLab()

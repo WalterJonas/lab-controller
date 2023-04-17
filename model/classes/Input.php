@@ -7,6 +7,27 @@ class Input
 	private $hour;
 	private $date;
 
+    public function checkin($lab, $name, $hour, $date)
+	{		
+		global $pdo;	
+        $sql=$pdo->prepare("INSERT INTO input(lab, name, hour, date) VALUES(:l, :n, :h, :d)"); 		
+        $sql->bindValue(":l", $lab, PDO::PARAM_STR); 	
+        $sql->bindValue(":n", $name, PDO::PARAM_STR); 
+        $sql->bindValue(":h", $hour,PDO::PARAM_STR);      
+        $sql->bindValue(":d", $date, PDO::PARAM_STR);              
+        $sql->execute();
+        if($sql->rowCount()>0)
+        { 
+            $sql=$pdo->prepare("UPDATE status SET situacao='Aberto' WHERE lab=$lab"); 
+            $sql->execute();
+            return true;      
+        }
+        else
+        {
+            return false;          
+        }		
+	}
+
     public function getLab()
     {
         return $this->lab;
