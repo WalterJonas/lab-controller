@@ -11,28 +11,19 @@ class Status
         $sql=$pdo->prepare("SELECT lab, situacao FROM status"); 		
         $sql->execute();
         if($sql->rowCount()>0)
-        { 
-           
-            $tableInput = "<center><table border=1>";
-			
+        {   
+            $tableInput = "<br><br><table border>";		
 			while(list($lab, $situacao)=$sql->fetch())
 			{
-            	$tableInput.="           			
-		        <tr>
-		            <td>$lab</td>
-		            <td>$situacao</td>
-		        </tr>";
+            	$tableInput.="           				      
+		            <td>$lab - $situacao </td>
+		       ";
 			}
 			$tableInput.="</table>";
             if($tableInput!="")
 			{	
-				echo $tableInput;										
-				return true;     				
-			}
-			else
-			{
-				return false;
-			}
+				echo $tableInput;										  				
+			}	
         }
 	}
 }

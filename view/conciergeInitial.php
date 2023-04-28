@@ -20,16 +20,14 @@
     <a href="registerAuthorized.php">Cadastrar autorizados para acessar os laboratótios</a>
     <?php
          require_once "../controller/Conection.php";
-         require_once "../model/Status.php";
-
-         $conection->conect("labcontroller", "localhost", "root", ""); 
+         require_once "../model/classes/Status.php";
+        
          $conection = new Conection;
          $status = new Status;
 
-         if($status->viewStatus()==false)
-         {
-            echo "Não tem lab";
-         }
+         $conection->conect("labcontroller", "localhost", "root", ""); 
+    
+         $status->viewStatus();
     ?>
 </body>
 </html>
