@@ -8,9 +8,28 @@
 </head>
 <body>
     <form action="checkin.php" method="post">
+        <label>Registrar Entrada</label>
         <input type="search" placeholder="Buscar Laboratório" name="lab" required>
-        <input type="submit" name="labSearch" >
+        <input type="submit" name="labSearchforint" value="Buscar" >
+    </form>
+    <form action="checkout.php" method="post">
+        <label>Registrar Saída</label>
+        <input type="search" placeholder="Buscar Laboratório" name="lab" required>
+        <input type="submit" name="labSearchforout" value="Buscar" >
     </form>
     <a href="registerAuthorized.php">Cadastrar autorizados para acessar os laboratótios</a>
+    <?php
+         require_once "../controller/Conection.php";
+         require_once "../model/Status.php";
+
+         $conection->conect("labcontroller", "localhost", "root", ""); 
+         $conection = new Conection;
+         $status = new Status;
+
+         if($status->viewStatus()==false)
+         {
+            echo "Não tem lab";
+         }
+    ?>
 </body>
 </html>

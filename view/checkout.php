@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Entrada</title>
+    <title>Registrar Saída</title>
 </head>
 <body>
 <?php
-    if(isset($_POST['labSearchforint'])) 
+    if(isset($_POST['labSearchforout'])) 
     {
         require_once "../controller/Conection.php";
         require_once "../model/classes/Authorized.php";
+        require_once "../model/classes/Input.php";
 
-        $authorized = new Authorized;         
         $conection = new Conection;
-
+        $authorized = new Authorized; 
+        $input = new Input;             
+        
         $lab = addslashes($_POST["lab"]);
             
         if(!empty($lab))
         {
             $conection->conect("labcontroller", "localhost", "root", ""); 
-
+                  
             echo "<form action='../model/buttonActions.php' method='POST'>";
 
             if($authorized->listAuthorized($lab)==false) 
@@ -31,10 +33,10 @@
             else
             {
                 echo "<br>	
-						<input type='submit' id='#' name='checkin' value='Registrar Entrada'> 
+						<input type='submit' id='#' name='checkout' value='Registrar Saída'> 
 					</form>";	
             }       
-        }         
+        }   
     }
 ?>
 </body>

@@ -87,6 +87,44 @@
                 echo "<script> alert('O laboratório $lab já está aberto!'); 
                 window.location.href='../view/conciergeInitial.php'; </script>";
             }         
-        }				
+        }
+    }
+              
+    else if(isset($_POST['checkout']))
+    {
+        require_once "../model/classes/Output.php";
+        $output = new Output;      
+
+        $id = $_POST["id"];
+
+        $sql=$pdo->prepare("SELECT lab, name FROM authorized WHERE id = :id"); 
+        $sql->bindValue(":id", $id);
+        $sql->execute(); 
+        if($sql->rowCount()>0)
+        { 
+            list($lab, $name)=$sql->fetch();  
+            $sql=$pdo->prepare("SELECT id FROM status WHERE lab='$lab' AND situacao='Fechado'"); 
+            $sql->execute(); 
+            if($sql->rowCount()<1)
+            {   
+                date_default_timezone_set('America/Manaus');
+                $hour= date('H:i');
+                if($output->checkout($lab, $name, $hour)==true)
+                {
+                    echo "<script> alert('Saída registrada com sucesso!'); 
+                        window.location.href='../view/conciergeInitial.php'; </script>";
+                }
+                else
+                {
+                    echo "<script> alert('Erro ao registrar saída!');
+                        window.location.href='../view/conciergeInitial.php'; </script>";
+                }
+            }
+            else
+            {
+                echo "<script> alert('A chave do laboratório $lab já foi devolvida!'); 
+                window.location.href='../view/conciergeInitial.php'; </script>";
+            }
+        }
     } 
     

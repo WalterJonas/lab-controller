@@ -60,10 +60,8 @@ class Authorized
 			$tableAuthorized.="</table>";
 
 			if($tableAuthorized!="")
-			{
-				
-				echo $tableAuthorized;	
-											
+			{	
+				echo $tableAuthorized;											
 				return true;     				
 			}
 			else

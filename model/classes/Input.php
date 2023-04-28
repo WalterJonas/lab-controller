@@ -28,6 +28,51 @@ class Input
         }		
 	}
 
+    public function listInput($lab)
+	{        
+		global $pdo;
+		$sql=$pdo->prepare("SELECT id, lab, name, hour, date FROM input WHERE lab = :l"); 
+				
+		$sql->bindValue(":l", $lab, PDO::PARAM_STR);
+		$sql->execute(); 
+
+		$tableInput="";
+		if($sql->rowCount()>0)
+		{
+			$tableInput = "<center><table border=1>";
+			$tableInput.="
+			<tr>
+                <td>Selecione</td>				
+				<td>Lab</td>
+				<td>Nome</td>
+				<td>Hora de entrada</td>
+                <td>Data</td>
+			</tr>";
+			while(list($id, $lab, $name, $hour, $date)=$sql->fetch())
+			{
+            	$tableInput.="           			
+		        <tr>
+                    <td><center><input type='radio' name='id' value='$id'></td>
+		            <td>$lab</td>
+		            <td>$name</td>
+		            <td>$hour</td>
+                    <td>$date</td>
+		        </tr>";
+			}
+			$tableInput.="</table>";
+
+			if($tableInput!="")
+			{	
+				echo $tableInput;										
+				return true;     				
+			}
+			else
+			{
+				return false;
+			}
+		}			
+	}
+
     public function getLab()
     {
         return $this->lab;

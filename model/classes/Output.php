@@ -6,6 +6,26 @@ class Output
 	private $name;
 	private $hour;
 
+    public function checkout($lab, $name, $hour)
+	{		
+		global $pdo;	
+        $sql=$pdo->prepare("INSERT INTO output(lab, name, hour) VALUES(:l, :n, :h)"); 		
+        $sql->bindValue(":l", $lab, PDO::PARAM_STR); 	
+        $sql->bindValue(":n", $name, PDO::PARAM_STR); 
+        $sql->bindValue(":h", $hour,PDO::PARAM_STR);        
+        $sql->execute();
+        if($sql->rowCount()>0)
+        { 
+            $sql=$pdo->prepare("UPDATE status SET situacao='Fechado' WHERE lab=$lab"); 
+            $sql->execute();
+            return true;
+        }
+        else
+        {
+            return false;          
+        }		
+	}
+
     public function getLab()
     {
         return $this->lab;
