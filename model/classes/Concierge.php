@@ -15,9 +15,9 @@ class Concierge
 		$sql->execute(); 
 		if($sql->rowCount()>0) 
 		{
-			//$dado=$sql->fetch(); //Transforma os dados que retornaram do BD em um vetor
-			//session_start(); //Inicia uma sessão
-			//$_SESSION['id']=$dado['id']; //Inicia sessão com ID_Cliente
+			$dado=$sql->fetch();
+			session_start();
+			$_SESSION['id']=$dado['id'];
 			return true;
 		}
 		else
