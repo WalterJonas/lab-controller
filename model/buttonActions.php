@@ -16,6 +16,7 @@
         {
             if($concierge->login($username, $password)) 
             {
+                setcookie("username", $username);
                 header("location: ../view/conciergeInitial.php");
             }
             else 

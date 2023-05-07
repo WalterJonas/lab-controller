@@ -8,6 +8,12 @@
 </head>
 <body>
 <?php
+    if(!isset($_SESSION['id']))
+    {
+        header("location: ../index.php");
+        exit;
+    }
+    
     if(isset($_POST['labSearchforint'])) 
     {
         require_once "../controller/Conection.php";

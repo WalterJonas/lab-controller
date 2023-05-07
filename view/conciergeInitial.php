@@ -18,16 +18,25 @@
         <input type="submit" name="labSearchforout" value="Buscar" >
     </form>
     <a href="registerAuthorized.php">Cadastrar autorizados para acessar os laboratótios</a>
-    <?php
-         require_once "../controller/Conection.php";
-         require_once "../model/classes/Status.php";
+    <?php    
+        session_start();
+        if(!isset($_SESSION['id']))
+        {
+            header("location: ../index.php");
+            exit;
+        }
+        else
+        {
+            require_once "../controller/Conection.php";
+            require_once "../model/classes/Status.php";
         
-         $conection = new Conection;
-         $status = new Status;
+            $conection = new Conection;
+            $status = new Status;
+            
+            $conection->conect("labcontroller", "localhost", "root", ""); 
 
-         $conection->conect("labcontroller", "localhost", "root", ""); 
-    
-         $status->viewStatus();
+            $status->viewStatus();
+        }    
     ?>
 </body>
 </html>
