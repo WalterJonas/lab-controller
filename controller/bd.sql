@@ -1,4 +1,5 @@
 CREATE DATABASE labcontroller;
+/*Criação do Banco*/
 
 CREATE TABLE concierge(
     id int primary key AUTO_INCREMENT,
