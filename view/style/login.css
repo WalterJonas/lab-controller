@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+body{
+    background-color: grey;
+}
+
+.btn-color{
+    background-color: #34A553;
+    color: #fff;
+  }
+  
+  .profile-image-pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  
+  
+  .cardbody-color{
+    background-color: #e2e8f0;
+  }
+  
+  a{
+    text-decoration: none;
+  }
