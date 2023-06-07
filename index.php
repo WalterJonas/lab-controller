@@ -15,7 +15,7 @@
       <div class="col-md-6 offset-md-3">
         <div class="card my-5">
 
-          <form class="card-body cardbody-color p-lg-3">
+          <form action="model/buttonActions.php" method="POST" class="card-body cardbody-color p-lg-3">
 
             <div class="text-center">
               <img src="./view/img/Login-amico.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
@@ -24,12 +24,12 @@
 
             <div class="mb-3">
               <input type="text" class="form-control" name="username" aria-describedby="emailHelp"
-                placeholder="Usuário">
+                placeholder="Usuário" required>
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" name="password" placeholder="Senha">
+              <input type="password" class="form-control" name="password" placeholder="Senha" required>
             </div>
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
+            <div class="text-center"><button type="submit" name="login" class="btn btn-color px-5 mb-5 w-100">Login</button></div>
             <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
               Registered? <a href="#" class="text-dark fw-bold"> Create an
                 Account</a>
