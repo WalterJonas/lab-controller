@@ -1,2 +1,28 @@
-@charset "utf-8";
-
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  label,
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    form {
+      padding: 10px;
+    }
+  }

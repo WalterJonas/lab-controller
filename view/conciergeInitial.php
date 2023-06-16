@@ -6,21 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        nav{
+            color: white;
+            background-color: #34A553;
+            padding: 10px;
+        }
+
+        nav a{
+            color: white;
+        }
+
+        form{
+            padding: 20px;
+            width: 90%;
+            font-weight: 600;
+        }
+
+        form label{
+            padding-bottom: 20px;
+        }
+
+        .registrer_row{
+            width: 95vw;
+            margin: auto;
+        }
+
+        .btn{
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin-top: 5px;
+        }
+
+        .btn:hover{
+            transition: 1s;
+            border: 1px solid black;
+            padding: 0;
+        }
+
+    </style>
+
 </head>
 <body>
-    <form action="checkin.php" method="post">
-        <label>Registrar Entrada</label>
-        <input type="search" placeholder="Buscar Laboratório" name="lab" required>
-        <input type="submit" name="labSearchforint" value="Buscar" >
-    </form>
-    <form action="checkout.php" method="post">
-        <label>Registrar Saída</label>
-        <input type="search" placeholder="Buscar Laboratório" name="lab" required>
-        <input type="submit" name="labSearchforout" value="Buscar" >
-    </form>
-    <a href="registerAuthorized.php">Cadastrar autorizados para acessar os laboratótios</a>
-    <a href="../model/logout.php">Sair</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">lab-controller</a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar</a>
+            </li>
+            <li>
+                <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
+            </li>
+        </ul>
+        
+    </nav>
+
+    <div class="row registrer_row">
+        <form class="col" action="checkin.php" method="post">
+            <label>Registrar Entrada</label>
+            <input type="search" class="form-control" placeholder="Buscar Laboratório" name="lab" required>
+            <input type="submit" class="btn" name="labSearchforint" value="Buscar" >
+        </form>
+        
+        <form class="col" action="checkout.php" method="post">
+            <label>Registrar Saída</label>
+            <input type="search" class="form-control" placeholder="Buscar Laboratório" name="lab" required>
+            <input type="submit" class="btn" name="labSearchforout" value="Buscar" >
+        </form>
+    </div>
     <?php 
         session_start();
         if(!isset($_SESSION['id']))
