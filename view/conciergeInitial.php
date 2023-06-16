@@ -23,6 +23,7 @@
             padding: 20px;
             width: 90%;
             font-weight: 600;
+            margin-bottom: 5%;
         }
 
         form label{
@@ -47,6 +48,19 @@
             padding: 0;
         }
 
+        .pai{
+            margin: auto;
+            width: 80%;
+        }
+
+        .filho{
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+
+
     </style>
 
 </head>
@@ -60,8 +74,7 @@
             <li>
                 <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
             </li>
-        </ul>
-        
+        </ul> 
     </nav>
 
     <div class="row registrer_row">

@@ -39,7 +39,7 @@
 
 </head>
 <body>
-    <form action="../model/buttonActions.php" class="row g-3">
+    <form action="../model/buttonActions.php" method="POST" class="row g-3">
     <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Laboratório</label>
         <input type="text" name="lab" class="form-control" name="lab" placeholder="Ex: 304" required>

@@ -39,15 +39,17 @@ class Input
 		$tableInput="";
 		if($sql->rowCount()>0)
 		{
-			$tableInput = "<center><table border=1>";
+			$tableInput = "<center><table";
 			$tableInput.="
-			<tr>
-                <td>Selecione</td>				
-				<td>Lab</td>
-				<td>Nome</td>
-				<td>Hora de entrada</td>
-                <td>Data</td>
-			</tr>";
+            <thead>
+                <tr>
+                    <td>Selecione</td>				
+                    <td>Lab</td>
+                    <td>Nome</td>
+                    <td>Hora de entrada</td>
+                    <td>Data</td>
+                </tr>
+                </thead>";
 			while(list($id, $lab, $name, $hour, $date)=$sql->fetch())
 			{
             	$tableInput.="           			

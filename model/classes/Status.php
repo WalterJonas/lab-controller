@@ -12,14 +12,14 @@ class Status
         $sql->execute();
         if($sql->rowCount()>0)
         {   
-            $tableInput = "<br><br><table border>";		
+            $tableInput = "<div class='d-flex justify-content-between pai'>";		
 			while(list($lab, $situacao)=$sql->fetch())
 			{
-            	$tableInput.="           				      
-		            <td>$lab - $situacao </td>
+            	$tableInput.="           	
+					<div class='filho'><p>$lab - $situacao </p></div>			      
 		       ";
 			}
-			$tableInput.="</table>";
+			$tableInput.="</div>";
             if($tableInput!="")
 			{	
 				echo $tableInput;										  				

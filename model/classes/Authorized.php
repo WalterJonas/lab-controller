@@ -35,21 +35,23 @@ class Authorized
 		$tableAuthorized="";
 		if($sql->rowCount()>0)
 		{
-			$tableAuthorized = "<center><table border=1>";
+			$tableAuthorized = "<center><table";
 			$tableAuthorized.="
-			<tr>
-                <td>Selecione</td>				
-				<td>Lab</td>
-				<td>Nome</td>
-				<td>Curso</td>
-                <td>Modalidade</td>
-                <td>Nível</td>
-			</tr>";
+			<thead>
+                <tr>
+                    <th>Selecione</td>				
+                    <th>Lab</td>
+                    <th>Nome</td>
+                    <th>Hora de entrada</td>
+                    <th>Data</td>
+                </tr>
+            </thead>
+			<tbody>";
 			while(list($id, $lab, $name, $course, $modality, $level)=$sql->fetch())
 			{
             	$tableAuthorized.="           			
 		        <tr>
-                    <td><center><input type='radio' name='id' value='$id'></td>
+                    <td><input type='radio' name='id' value='$id'></td>
 		            <td>$lab</td>
 		            <td>$name</td>
 		            <td>$course</td>
@@ -57,7 +59,7 @@ class Authorized
                     <td>$level</td>
 		        </tr>";
 			}
-			$tableAuthorized.="</table>";
+			$tableAuthorized.="</tbody></table>";
 
 			if($tableAuthorized!="")
 			{	
