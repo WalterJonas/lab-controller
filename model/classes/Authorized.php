@@ -42,8 +42,9 @@ class Authorized
                     <th>Selecione</td>				
                     <th>Lab</td>
                     <th>Nome</td>
-                    <th>Hora de entrada</td>
-                    <th>Data</td>
+                    <th>Curso</td>
+                    <th>Modalidade</td>
+					<th>Nível</td>
                 </tr>
             </thead>
 			<tbody>";

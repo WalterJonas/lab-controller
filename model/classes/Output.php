@@ -6,13 +6,14 @@ class Output
 	private $name;
 	private $hour;
 
-    public function checkout($lab, $name, $hour)
+    public function checkout($lab, $name, $hour, $date)
 	{		
 		global $pdo;	
-        $sql=$pdo->prepare("INSERT INTO output(lab, name, hour) VALUES(:l, :n, :h)"); 		
+        $sql=$pdo->prepare("INSERT INTO output(lab, name, hour, date) VALUES(:l, :n, :h, :d)"); 		
         $sql->bindValue(":l", $lab, PDO::PARAM_STR); 	
         $sql->bindValue(":n", $name, PDO::PARAM_STR); 
-        $sql->bindValue(":h", $hour,PDO::PARAM_STR);        
+        $sql->bindValue(":h", $hour,PDO::PARAM_STR);     
+        $sql->bindValue(":d", $date,PDO::PARAM_STR);         
         $sql->execute();
         if($sql->rowCount()>0)
         { 

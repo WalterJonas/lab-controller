@@ -69,7 +69,10 @@
         <a class="navbar-brand">lab-controller</a>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar</a>
+                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar Autorizado</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="viewRecords.php">Visualizar Registros</a>
             </li>
             <li>
                 <a class="nav-link text-danger" href="../model/logout.php">Sair</a>

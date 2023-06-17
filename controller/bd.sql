@@ -31,7 +31,8 @@ CREATE TABLE output(
     id int PRIMARY key AUTO_INCREMENT,
     lab varchar(30) NOT NULL,
     name varchar(30) NOT NULL,
-    hour varchar(30) NOT NULL
+    hour varchar(30) NOT NULL,
+    date varchar(30) NOT NULL
     );
 
 CREATE TABLE status(

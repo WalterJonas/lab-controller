@@ -46,19 +46,19 @@
     </div>
     <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Nome</label>
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="name" class="form-control" required>
     </div>
     <div class="col-12">
         <label for="inputAddress" class="form-label">Curso</label>
-        <input type="text" name="course" class="form-control" placeholder="Ex: Engenharia de Software">
+        <input type="text" name="course" class="form-control" placeholder="Ex: Engenharia de Software" required>
     </div>
     <div class="col-12">
         <label for="inputAddress2" class="form-label">Modalidade</label>
-        <input type="text" name="modality" class="form-control" placeholder="Ex: Professor">
+        <input type="text" name="modality" class="form-control" placeholder="Ex: Bolsista" required>
     </div>
     <div class="col-md-6">
         <label for="inputCity" class="form-label">Nivel</label>
-        <input type="text" name="level" class="form-control">
+        <input type="text" name="level" class="form-control" placeholder="Ex: Aluno" required>
     </div>
     <div class="col-12">    
         <button type="submit" name="registerAuthorized" class="btn btn-primary">Cadastrar Autorizado</button>

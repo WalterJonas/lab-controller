@@ -43,7 +43,14 @@
             {
                 echo "<br>	
 						<input type='submit' id='#' name='checkout' value='Registrar Saída'> 
-					</form>";	
+					</form>
+                    
+                    <h5>Caso o devolvedor não seja um dos autorizados, registre a saída no caixa de input abaixo</h5>
+                    <form action='../model/buttonActions.php' method='post'>
+                        <input type='text' id='#' name='lab' placeholder='Lab' value='$lab'> 
+                        <input type='text' id='#' name='name' placeholder='Nome'> 
+                        <input type='submit' id='#' name='checkout2' value='Registrar Saída'> 
+                    </form>";	
             }       
         }   
     }

@@ -26,6 +26,96 @@ class Concierge
 		}
 	}
 
+
+
+	public function inputRecords($lab)
+	{        
+		global $pdo;
+		$sql=$pdo->prepare("SELECT lab, name, hour, date FROM input WHERE lab = :l ORDER BY id DESC"); 
+		$sql->bindValue(":l", $lab, PDO::PARAM_STR);
+		$sql->execute(); 	
+		$tableRecords="";
+		if($sql->rowCount()>0)
+		{
+			$tableRecords = "<center><table";
+			$tableRecords.="
+			<thead>
+                <tr>		
+                    <th>Lab</td>
+                    <th>Nome</td>
+                    <th>Hora de entrada</td>
+                    <th>Data</td>						
+                </tr>
+            </thead>
+			<tbody>";
+			while(list($lab, $name, $hour, $date)=$sql->fetch())
+			{
+            	$tableRecords.="           			
+		        <tr>	
+		            <td>$lab</td>
+		            <td>$name</td>
+		            <td>$hour</td>
+                    <td>$date</td>												
+		        </tr>";
+			}
+			$tableRecords.="</tbody></table>";
+
+			if($tableRecords!="")
+			{	
+				echo $tableRecords;											
+				return true;     				
+			}
+			else
+			{
+				return false;
+			}
+		}			
+	}
+
+	public function outputRecords($lab)
+	{        
+		global $pdo;
+		$sql=$pdo->prepare("SELECT lab, name, hour, date FROM output WHERE lab = :l ORDER BY id DESC"); 
+		$sql->bindValue(":l", $lab, PDO::PARAM_STR); 
+		$sql->execute(); 	
+		$tableRecords="";
+		if($sql->rowCount()>0)
+		{
+			$tableRecords = "<center><table";
+			$tableRecords.="
+			<thead>
+                <tr>		
+                    <th>Lab</td>
+                    <th>Nome</td>
+                    <th>Hora de saída</td>
+                    <th>Data</td>						
+                </tr>
+            </thead>
+			<tbody>";
+			while(list($lab, $name, $hour, $date)=$sql->fetch())
+			{
+            	$tableRecords.="           			
+		        <tr>	
+		            <td>$lab</td>
+		            <td>$name</td>
+		            <td>$hour</td>
+                    <td>$date</td>												
+		        </tr>";
+			}
+			$tableRecords.="</tbody></table>";
+
+			if($tableRecords!="")
+			{	
+				echo $tableRecords;											
+				return true;     				
+			}
+			else
+			{
+				return false;
+			}
+		}	
+	}
+
 	public function getUsername()
     {
         return $this->username;
