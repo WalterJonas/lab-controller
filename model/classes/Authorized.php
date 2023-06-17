@@ -35,19 +35,20 @@ class Authorized
 		$tableAuthorized="";
 		if($sql->rowCount()>0)
 		{
-			$tableAuthorized = "<center><table";
+			$tableAuthorized = "<center><table class='table table-hover'>";
 			$tableAuthorized.="
 			<thead>
                 <tr>
-                    <th>Selecione</td>				
-                    <th>Lab</td>
-                    <th>Nome</td>
-                    <th>Curso</td>
-                    <th>Modalidade</td>
-					<th>Nível</td>
+                    <th>Selecione</th>				
+                    <th>Lab</th>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                    <th>Modalidade</th>
+					<th>Nível</th>
                 </tr>
             </thead>
-			<tbody>";
+			</tbody>";
+			
 			while(list($id, $lab, $name, $course, $modality, $level)=$sql->fetch())
 			{
             	$tableAuthorized.="           			
@@ -60,7 +61,7 @@ class Authorized
                     <td>$level</td>
 		        </tr>";
 			}
-			$tableAuthorized.="</tbody></table>";
+			$tableAuthorized.="</table>";
 
 			if($tableAuthorized!="")
 			{	

@@ -37,17 +37,18 @@ class Concierge
 		$tableRecords="";
 		if($sql->rowCount()>0)
 		{
-			$tableRecords = "<center><table";
+			$tableRecords = "<center><table class='table table-hover'>";
 			$tableRecords.="
 			<thead>
                 <tr>		
-                    <th>Lab</td>
-                    <th>Nome</td>
-                    <th>Hora de entrada</td>
-                    <th>Data</td>						
+                    <th>Lab</th>
+                    <th>Nome</th>
+                    <th>Hora de entrada</th>
+                    <th>Data</th>						
                 </tr>
             </thead>
 			<tbody>";
+			
 			while(list($lab, $name, $hour, $date)=$sql->fetch())
 			{
             	$tableRecords.="           			

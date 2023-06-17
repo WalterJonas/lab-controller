@@ -13,6 +13,7 @@
             color: white;
             background-color: #34A553;
             padding: 10px;
+            margin-bottom: 5%;
         }
 
         nav a{
@@ -57,6 +58,13 @@
             border: 1px solid black;
             padding: 10px;
             border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .filho:hover{
+            -ms-transform: scale(1.3);
+            transform: scale(1.3);
+            transition: 1s;
         }
 
 
@@ -66,13 +74,10 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand">lab-controller</a>
+        <a href="conciergeInitial.php" class="navbar-brand">lab-controller</a>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar Autorizado</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="viewRecords.php">Visualizar Registros</a>
+                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar</a>
             </li>
             <li>
                 <a class="nav-link text-danger" href="../model/logout.php">Sair</a>

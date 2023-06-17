@@ -7,8 +7,56 @@
     <title>Registrar Saída</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+        }
+
+        nav{
+            color: white;
+            background-color: #34A553;
+            padding: 10px;
+            margin-bottom: 5%;
+        }
+
+        nav a{
+            color: white;
+        }
+
+        .table{
+            width: 90vw;
+        }
+
+        .row{
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        form{
+            width: 100%;
+        }
+
+    </style>
+
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="conciergeInitial.php" class="navbar-brand">lab-controller</a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar Autorizado</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-white" href="viewRecords.php">Visualizar Registros</a>
+            </li>
+            <li>
+                <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
+            </li>
+        </ul> 
+    </nav>
 <?php
     session_start();
     if(!isset($_SESSION['id']))
@@ -42,19 +90,25 @@
             else
             {
                 echo "<br>	
-						<input type='submit' id='#' name='checkout' value='Registrar Saída'> 
+						<input type='submit' class='btn btn-success' id='#' name='checkout' value='Registrar Saída'> 
 					</form>
                     
-                    <h5>Caso o devolvedor não seja um dos autorizados, registre a saída no caixa de input abaixo</h5>
-                    <form action='../model/buttonActions.php' method='post'>
-                        <input type='text' id='#' name='lab' placeholder='Lab' value='$lab'> 
-                        <input type='text' id='#' name='name' placeholder='Nome'> 
-                        <input type='submit' id='#' name='checkout2' value='Registrar Saída'> 
+                    <hr><br>
+                    <h5>Caso o devolvedor não seja um dos autorizados, registre a saída no caixa de input abaixo:</h5>
+                    <form class='row g-3' action='../model/buttonActions.php' method='post'>
+                    <div class='col-auto'>
+                        <input type='text' id='#' class='form-control form-control-sm' name='lab' placeholder='Lab' value='$lab'> 
+                    </div>
+                    <div class='col-auto'>
+                        <input type='text' class='form-control form-control-sm' id='#' name='name' placeholder='Nome'> 
+                    </div>
+                    <div class='col-auto'>
+                        <input type='submit' class='btn btn-warning btn-sm'  id='#' name='checkout2' value='Registrar Saída'> 
+                    </div>
                     </form>";	
             }       
         }   
     }
 ?>
-
 </body>
 </html>
