@@ -67,7 +67,15 @@
             transition: 1s;
         }
 
+        .open{
+            border-color: green;
+            -webkit-box-shadow: 7px 7px 18px -8px rgba(64,255,0,1);
+        }
 
+        .close{
+            border-color: red;
+            -webkit-box-shadow: 7px 7px 18px -8px rgba(255,0,0,1);
+        }
 
     </style>
 

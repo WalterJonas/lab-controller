@@ -15,9 +15,15 @@ class Status
             $tableInput = "<div class='d-flex justify-content-between pai'>";		
 			while(list($lab, $situacao)=$sql->fetch())
 			{
-            	$tableInput.="           	
-					<div class='filho'><p>$lab - $situacao </p></div>			      
-		       ";
+				if($situacao == "Aberto"){
+					$tableInput.="           	
+					<div class='filho open'><p>$lab - $situacao </p></div>			      
+		       		";
+				}else if($situacao == "Fechado"){
+					$tableInput.="           	
+					<div class='filho close'><p>$lab - $situacao </p></div>			      
+		       		";
+				}
 			}
 			$tableInput.="</div>";
             if($tableInput!="")

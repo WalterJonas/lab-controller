@@ -59,7 +59,7 @@ class Concierge
                     <td>$date</td>												
 		        </tr>";
 			}
-			$tableRecords.="</tbody></table>";
+			$tableRecords.="</table>";
 
 			if($tableRecords!="")
 			{	
@@ -82,14 +82,14 @@ class Concierge
 		$tableRecords="";
 		if($sql->rowCount()>0)
 		{
-			$tableRecords = "<center><table";
+			$tableRecords = "<center><table class='table table-hover'>";
 			$tableRecords.="
 			<thead>
                 <tr>		
-                    <th>Lab</td>
-                    <th>Nome</td>
-                    <th>Hora de saída</td>
-                    <th>Data</td>						
+                    <th>Lab</th>
+                    <th>Nome</th>
+                    <th>Hora de saída</th>
+                    <th>Data</th>						
                 </tr>
             </thead>
 			<tbody>";
@@ -103,7 +103,7 @@ class Concierge
                     <td>$date</td>												
 		        </tr>";
 			}
-			$tableRecords.="</tbody></table>";
+			$tableRecords.="</table>";
 
 			if($tableRecords!="")
 			{	

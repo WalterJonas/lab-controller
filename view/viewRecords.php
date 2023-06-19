@@ -114,7 +114,7 @@
                 
             if(!empty($lab))
             {
-                echo "<div class='linha'>Registro de Saída</div>";
+                echo "<hr><div class='linha'>Registro de Saída</div>";
                 $conection->conect("labcontroller", "localhost", "root", ""); 
 
                 if($concierge->outputRecords($lab)==false) 
