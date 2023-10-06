@@ -1,26 +1,93 @@
 @charset "utf-8";
 
 body{
-    background-color: grey;
+    background-color: #181920;
+    margin: 0%;
 }
 
-.btn-color{
-    background-color: #34A553;
-    color: #fff;
-  }
-  
-  .profile-image-pic{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-  }
-  
-  
-  
-  .cardbody-color{
-    background-color: #e2e8f0;
-  }
-  
-  a{
-    text-decoration: none;
-  }
+.main-login{
+  width: 100vw;
+  height: 100vh;
+  background: #181920;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-login{
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-image{
+  width: 65%;
+}
+
+.rigth-login{
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.rigth-login h1{
+  margin: 0 0 20px 0;
+}
+
+.card-login{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background-color: #181920;
+  border-radius: 15px;
+}
+
+.card-login h1{
+  font-size: 15pt;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.textfield{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+.textfield > input{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+input::placeholder{
+  color: #181920;
+  font-weight: 600;
+}
+
+.btn-login{
+  width: 100%;
+  padding: 10px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
