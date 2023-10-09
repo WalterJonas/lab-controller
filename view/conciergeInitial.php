@@ -6,96 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <style>
-        nav{
-            color: white;
-            background-color: #34A553;
-            padding: 10px;
-            margin-bottom: 5%;
-        }
-
-        nav a{
-            color: white;
-        }
-
-        form{
-            padding: 20px;
-            width: 90%;
-            font-weight: 600;
-            margin-bottom: 5%;
-        }
-
-        form label{
-            padding-bottom: 20px;
-        }
-
-        .registrer_row{
-            width: 95vw;
-            margin: auto;
-        }
-
-        .btn{
-            width: auto;
-            height: auto;
-            padding: 0;
-            margin-top: 5px;
-        }
-
-        .btn:hover{
-            transition: 1s;
-            border: 1px solid black;
-            padding: 0;
-        }
-
-        .pai{
-            margin: auto;
-            width: 80%;
-        }
-
-        .filho{
-            border: 1px solid black;
-            padding: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .filho:hover{
-            -ms-transform: scale(1.3);
-            transform: scale(1.3);
-            transition: 1s;
-        }
-
-
-
-    </style>
+    <link rel="stylesheet" href="./style/home.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="conciergeInitial.php" class="navbar-brand">lab-controller</a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar</a>
-            </li>
-            <li>
-                <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
-            </li>
-        </ul> 
-    </nav>
+    <header>
+        <nav>
+            <a class="logo" href="/">Lab-Controller</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Cadastrar Autorizado</a></li>
+                <li><a href="#">Visualizar Registos</a></li>
+                <li><a href="#">Encerrar Sessão</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="row registrer_row">
-        <form class="col" action="checkin.php" method="post">
+    <main>
+    <div class="container-register">
+        <form class="register" action="checkin.php" method="post">
             <label>Registrar Entrada</label>
-            <input type="search" class="form-control" placeholder="Buscar Laboratório" name="lab" required>
-            <input type="submit" class="btn" name="labSearchforint" value="Buscar" >
+            <div class="button">
+                <input type="search" placeholder="Número do Laboratório" name="lab" required>
+                <button type="submit" name="labSearchforint">Buscar</button>
+            </div>
         </form>
         
-        <form class="col" action="checkout.php" method="post">
+        <form class="register" action="checkout.php" method="post">
             <label>Registrar Saída</label>
-            <input type="search" class="form-control" placeholder="Buscar Laboratório" name="lab" required>
-            <input type="submit" class="btn" name="labSearchforout" value="Buscar" >
+            <div class="button">
+                <input type="search"  placeholder="Número do Laboratório" name="lab" required>
+                <button type="submit" name="labSearchforout">Buscar</button>
+            </div>
         </form>
     </div>
     <?php 
@@ -119,5 +65,8 @@
         }                             
     ?>
 
+    </main>
+    
+    <script src="./JS/mobile-navbar.js"></script>
 </body>
 </html>

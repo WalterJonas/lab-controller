@@ -12,12 +12,20 @@ class Status
         $sql->execute();
         if($sql->rowCount()>0)
         {   
-            $tableInput = "<div class='d-flex justify-content-between pai'>";		
+            $tableInput = "<h3>Status Atual</h3><div class='flex-grid'>";		
 			while(list($lab, $situacao)=$sql->fetch())
 			{
-            	$tableInput.="           	
-					<div class='filho'><p>$lab - $situacao </p></div>			      
-		       ";
+				if($situacao == "Aberto"){
+					$tableInput.="           	
+					<div class='filho'><p>Sala: $lab</p>
+					<img src='./img/escudo.png' alt='aberto'></div>			      
+		       		";
+				}else if($situacao == "Fechado"){
+					$tableInput.="           	
+					<div class='filho'><p>Sala: $lab</p>
+					<img src='./img/fechadas.png' alt='aberto'></div>			      
+		       		";
+				}
 			}
 			$tableInput.="</div>";
             if($tableInput!="")
