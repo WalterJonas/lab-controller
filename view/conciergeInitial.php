@@ -19,9 +19,9 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="#">Cadastrar Autorizado</a></li>
-                <li><a href="#">Visualizar Registos</a></li>
-                <li><a href="#">Encerrar Sessão</a></li>
+                <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
+                <li><a href="./viewRecords.php">Visualizar Registos</a></li>
+                <li><a href="../model/logout.php">Encerrar Sessão</a></li>
             </ul>
         </nav>
     </header>
