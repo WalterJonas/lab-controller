@@ -48,17 +48,17 @@
         {
             $conection->conect("labcontroller", "localhost", "root", ""); 
 
-            echo "<form action='../model/buttonActions.php' method='POST'>";
+            echo "<main> <h3>Usuários com Autorização</h3> <form action='../model/buttonActions.php' method='POST'>";
 
             if($authorized->listAuthorized($lab)==false) 
             {
-                echo "<h2>Não tem ninguém autorizado para esse lab! </h2>";
+                echo "<div class='not-found'><img src='./img/error.png' alt='aberto'><h2>Não tem ninguém autorizado para esse lab! </h2> </div>";
             }
             else
             {
-                echo "<br>	
+                echo "
 						<input class='btn btn-success' type='submit' id='#' name='checkin' value='Registrar Entrada'> 
-					</form>";	
+					</form> </main>";	
             }       
         }         
     }

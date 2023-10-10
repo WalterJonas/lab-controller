@@ -15,74 +15,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar registros</title>
 
-
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav{
-            color: white;
-            background-color: #34A553;
-            padding: 10px;
-            margin-bottom: 5%;
-        }
-
-        nav a{
-            color: white;
-        }
-
-        .table{
-            width: 90vw;
-        }
-
-        .registrer_row{
-            width: 95vw;
-            margin: auto;
-        }
-
-        .linha{
-            text-align: center;
-            font-size: 14pt;
-            padding: 10px;
-            font-weight: 600;   
-        }
-
-        h2{
-            text-align: center;
-            color: gray;
-            margin-top: 5%;
-        }
-    </style>
+    <link rel="stylesheet" href="./style/viewRecords.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="conciergeInitial.php" class="navbar-brand">lab-controller</a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar Autorizado</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="viewRecords.php">Visualizar Registros</a>
-            </li>
-            <li>
-                <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
-            </li>
-        </ul> 
-    </nav>
+    <header>
+        <nav>
+            <a class="logo" href="./conciergeInitial.php">Lab-Controller</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
+                <li><a href="./viewRecords.php">Visualizar Registos</a></li>
+                <li><a href="../model/logout.php">Encerrar Sessão</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="row registrer_row">
-        <form class="col" method="post">
+    <div>
+        <form method="post">
             <label>Visualizar registros de entrada</label>
-            <input type="search" class="form-control" placeholder="Buscar Laboratório" name="lab" required>
-            <input type="submit" class="btn" name="labSearchforint" value="Buscar" >
+            <input type="search" placeholder="Buscar Laboratório" name="lab" required>
+            <input type="submit" name="labSearchforint" value="Buscar" >
         </form>
-        <form class="col" method="post">
+        <form method="post">
             <label>Visualizar registros de Saída</label>
-            <input type="search" class="form-control" placeholder="Buscar Laboratório" name="lab" required>
-            <input type="submit" class="btn" name="labSearchforout" value="Buscar" >
+            <input type="search" placeholder="Buscar Laboratório" name="lab" required>
+            <input type="submit" name="labSearchforout" value="Buscar" >
             </form>
         </div>
     <?php

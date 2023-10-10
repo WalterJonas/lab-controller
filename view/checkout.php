@@ -6,56 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Saída</title>
 
-
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-        }
-
-        nav{
-            color: white;
-            background-color: #34A553;
-            padding: 10px;
-            margin-bottom: 5%;
-        }
-
-        nav a{
-            color: white;
-        }
-
-        .table{
-            width: 90vw;
-        }
-
-        .row{
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        form{
-            width: 100%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./style/chekout.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="conciergeInitial.php" class="navbar-brand">lab-controller</a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar Autorizado</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="viewRecords.php">Visualizar Registros</a>
-            </li>
-            <li>
-                <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
-            </li>
-        </ul> 
-    </nav>
+    <header>
+        <nav>
+            <a class="logo" href="./conciergeInitial.php">Lab-Controller</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
+                <li><a href="./viewRecords.php">Visualizar Registos</a></li>
+                <li><a href="../model/logout.php">Encerrar Sessão</a></li>
+            </ul>
+        </nav>
+    </header>
 <?php
     session_start();
     if(!isset($_SESSION['id']))
@@ -80,11 +49,11 @@
         {
             $conection->conect("labcontroller", "localhost", "root", ""); 
                   
-            echo "<form action='../model/buttonActions.php' method='POST'>";
+            echo "<main> <form action='../model/buttonActions.php' method='POST'>";
 
             if($authorized->listAuthorized($lab)==false) 
             {
-                echo "<h2>Não tem ninguém autorizado para esse lab! </h2>";
+                echo "<div class='not-found'><img src='./img/error.png' alt='aberto'><h2>Não tem ninguém autorizado para esse lab! </h2> </div>";
             }
             else
             {
@@ -104,10 +73,12 @@
                     <div class='col-auto'>
                         <input type='submit' class='btn btn-warning btn-sm'  id='#' name='checkout2' value='Registrar Saída'> 
                     </div>
-                    </form>";	
+                    </form> </main>";	
             }       
         }   
     }
 ?>
+
+    <script src="./JS/mobile-navbar.js"></script>
 </body>
 </html>

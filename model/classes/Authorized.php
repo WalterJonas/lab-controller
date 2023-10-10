@@ -35,7 +35,7 @@ class Authorized
 		$tableAuthorized="";
 		if($sql->rowCount()>0)
 		{
-			$tableAuthorized = "<center><table class='table table-hover'>";
+			$tableAuthorized = "<div id='container'><table class=''>";
 			$tableAuthorized.="
 			<thead>
                 <tr>
@@ -61,7 +61,7 @@ class Authorized
                     <td>$level</td>
 		        </tr>";
 			}
-			$tableAuthorized.="</table>";
+			$tableAuthorized.="</table> </div>";
 
 			if($tableAuthorized!="")
 			{	

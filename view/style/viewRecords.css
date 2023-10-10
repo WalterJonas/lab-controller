@@ -22,7 +22,7 @@
   
   nav {
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
     font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
@@ -114,96 +114,4 @@
   
   .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
-  }
-
-/*Funcionalidades*/
-li:nth-child(2){
-  text-decoration: underline #fff;
-}
-
-  main{
-    height: 90vh;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #181920;
-  }
-
-  h3{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    font-weight: 300;
-    color: #fff;
-    padding-top: 5%;
-  }
-  /*tabela*/
-
-  table{
-    width: 100%; 
-    table-layout: auto;
-  }
-
-  table, tr, td{
-    border-collapse: collapse;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  thead, td{
-    color: #fff;
-  }
-
-  tr{
-    height: 40px;
-    transition: 0.5s ease-in;
-  }
-
-  th,td{
-    border-spacing: 15px;
-  }
-  tbody tr:hover{
-    background-color: #ffffff7e;
-    opacity: 0.7;
-  }
-
-  form{
-    padding-top: 3%;
-    width: 80%;
-    text-align: center;
-  }
-
-  form input{
-    margin-top: 5%;
-    background-color: transparent;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    color: #fff;
-  }
-
-  .not-found{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .not-found img{
-    margin: auto;
-    width: 300px;
-  }
-
-  h2{
-    color: #fff;
-  }
-
-  @media screen and (max-width: 540px) {
-    #container{
-      overflow-x: scroll;
-    }
-
-    h2{
-      font-size: 12pt;
-    }
   }

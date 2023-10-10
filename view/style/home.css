@@ -192,7 +192,7 @@ main{
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   background-color: #181920;
 }
