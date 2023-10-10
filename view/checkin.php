@@ -6,46 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Entrada</title>
 
-
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav{
-            color: white;
-            background-color: #34A553;
-            padding: 10px;
-            margin-bottom: 5%;
-        }
-
-        nav a{
-            color: white;
-        }
-
-        .table{
-            width: 90vw;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./style/chekin.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="conciergeInitial.php" class="navbar-brand">lab-controller</a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="registerAuthorized.php">Cadastrar Autorizado</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="viewRecords.php">Visualizar Registros</a>
-            </li>
-            <li>
-                <a class="nav-link text-danger" href="../model/logout.php">Sair</a>
-            </li>
-        </ul> 
-    </nav>
+    <header>
+        <nav>
+            <a class="logo" href="./conciergeInitial.php">Lab-Controller</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
+                <li><a href="./viewRecords.php">Visualizar Registos</a></li>
+                <li><a href="../model/logout.php">Encerrar Sessão</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <?php
     session_start();
@@ -84,6 +63,6 @@
         }         
     }
 ?>
-
+    <script src="./JS/mobile-navbar.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <a class="logo" href="/">Lab-Controller</a>
+            <a class="logo" href="./conciergeInitial.php">Lab-Controller</a>
             <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -31,7 +31,7 @@
         <form class="register" action="checkin.php" method="post">
             <label>Registrar Entrada</label>
             <div class="button">
-                <input type="search" placeholder="Número do Laboratório" name="lab" required>
+                <input type="search" autocomplete="off" placeholder="Número do Laboratório" name="lab" required>
                 <button type="submit" name="labSearchforint">Buscar</button>
             </div>
         </form>
@@ -39,7 +39,7 @@
         <form class="register" action="checkout.php" method="post">
             <label>Registrar Saída</label>
             <div class="button">
-                <input type="search"  placeholder="Número do Laboratório" name="lab" required>
+                <input type="search" autocomplete="off"  placeholder="Número do Laboratório" name="lab" required>
                 <button type="submit" name="labSearchforout">Buscar</button>
             </div>
         </form>
