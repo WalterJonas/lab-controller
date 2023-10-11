@@ -19,6 +19,7 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
+                <li><a href="./conciergeInitial.php">Home</a></li>
                 <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
                 <li><a href="./viewRecords.php">Visualizar Registos</a></li>
                 <li><a href="../model/logout.php">Encerrar Sessão</a></li>
@@ -49,7 +50,7 @@
         {
             $conection->conect("labcontroller", "localhost", "root", ""); 
                   
-            echo "<main> <form action='../model/buttonActions.php' method='POST'>";
+            echo "<main><h3>Usuários com Autorização</h3> <form action='../model/buttonActions.php' method='POST'>";
 
             if($authorized->listAuthorized($lab)==false) 
             {
@@ -57,21 +58,19 @@
             }
             else
             {
-                echo "<br>	
-						<input type='submit' class='btn btn-success' id='#' name='checkout' value='Registrar Saída'> 
+                echo "	
+					<input type='submit' class='btn btn-success' id='#' name='checkout' value='Registrar Saída'> 
 					</form>
                     
-                    <hr><br>
-                    <h5>Caso o devolvedor não seja um dos autorizados, registre a saída no caixa de input abaixo:</h5>
-                    <form class='row g-3' action='../model/buttonActions.php' method='post'>
-                    <div class='col-auto'>
-                        <input type='text' id='#' class='form-control form-control-sm' name='lab' placeholder='Lab' value='$lab'> 
+                    <div class='form-saida'><h2>Caso não exista na tabela, registrar abaixo:</h2>
+                    <form action='../model/buttonActions.php' method='post'>
+                    <div class='input-saida'>
+                        <input type='text' id='#' name='lab' placeholder='Lab' value='$lab'> 
+                    
+                        <input type='text' id='#' name='name' placeholder='Nome'> 
+                    
+                        <input type='submit' id='#' name='checkout2' value='Registrar Saída'> 
                     </div>
-                    <div class='col-auto'>
-                        <input type='text' class='form-control form-control-sm' id='#' name='name' placeholder='Nome'> 
-                    </div>
-                    <div class='col-auto'>
-                        <input type='submit' class='btn btn-warning btn-sm'  id='#' name='checkout2' value='Registrar Saída'> 
                     </div>
                     </form> </main>";	
             }       

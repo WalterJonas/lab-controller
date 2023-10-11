@@ -39,7 +39,7 @@ class Input
 		$tableInput="";
 		if($sql->rowCount()>0)
 		{
-			$tableInput = "<center><table";
+			$tableInput = "<table";
 			$tableInput.="
             <thead>
                 <tr>
@@ -54,7 +54,7 @@ class Input
 			{
             	$tableInput.="           			
 		        <tr>
-                    <td><center><input type='radio' name='id' value='$id'></td>
+                    <td><input type='radio' name='id' value='$id'></td>
 		            <td>$lab</td>
 		            <td>$name</td>
 		            <td>$hour</td>

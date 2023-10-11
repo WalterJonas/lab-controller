@@ -28,6 +28,7 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
+                <li><a href="./conciergeInitial.php">Home</a></li>
                 <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
                 <li><a href="./viewRecords.php">Visualizar Registos</a></li>
                 <li><a href="../model/logout.php">Encerrar Sessão</a></li>
@@ -35,18 +36,20 @@
         </nav>
     </header>
 
-    <div>
-        <form method="post">
-            <label>Visualizar registros de entrada</label>
-            <input type="search" placeholder="Buscar Laboratório" name="lab" required>
-            <input type="submit" name="labSearchforint" value="Buscar" >
+    <main>
+    <div class="container-register">
+        <form class="register" method="post">
+            <label>Registros de entrada</label>
+            <input type="search" autocomplete="off"  placeholder="Buscar Laboratório" name="lab" required>
+            <button type="submit" name="labSearchforint">Visualizar</button>
         </form>
-        <form method="post">
-            <label>Visualizar registros de Saída</label>
-            <input type="search" placeholder="Buscar Laboratório" name="lab" required>
-            <input type="submit" name="labSearchforout" value="Buscar" >
+        <form class="register" method="post">
+            <label>Registros de Saída</label>
+            <input type="search" autocomplete="off"  placeholder="Buscar Laboratório" name="lab" required>
+            <button type="submit" name="labSearchforout">Visualizar</button>
             </form>
-        </div>
+    </div>
+
     <?php
         require_once "../controller/Conection.php";
         require_once "../model/classes/Concierge.php";
@@ -60,7 +63,7 @@
                 
             if(!empty($lab))
             {
-                echo "<hr><div class='linha'>Registros de Entrada</div>";
+                echo "<h3>Registros de Entrada</h3>";
                 $conection->conect("labcontroller", "localhost", "root", ""); 
 
                 if($concierge->inputRecords($lab)==false) 
@@ -75,16 +78,17 @@
                 
             if(!empty($lab))
             {
-                echo "<div class='linha'>Registro de Saída</div>";
+                echo "<h3>Registro de Saída</h3>";
                 $conection->conect("labcontroller", "localhost", "root", ""); 
 
                 if($concierge->outputRecords($lab)==false) 
                 {
-                    echo "<h2>Não há registros :(</h2>";
+                    echo "<h2>Não há registros :(</h2> </main>";
                 }
             }   
         }     
     ?>
-
+    
+    <script src="./JS/mobile-navbar.js"></script>
 </body>
 </html>

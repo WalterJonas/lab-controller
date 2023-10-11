@@ -19,6 +19,7 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
+                <li><a href="./conciergeInitial.php">Home</a></li>
                 <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
                 <li><a href="./viewRecords.php">Visualizar Registos</a></li>
                 <li><a href="../model/logout.php">Encerrar Sessão</a></li>
@@ -40,7 +41,7 @@
             <label>Registrar Saída</label>
             <div class="button">
                 <input type="search" autocomplete="off"  placeholder="Número do Laboratório" name="lab" required>
-                <button type="submit" name="labSearchforout">Buscar</button>
+                <button type="submit" aut name="labSearchforout">Buscar</button>
             </div>
         </form>
     </div>

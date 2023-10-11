@@ -19,6 +19,7 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
+                <li><a href="./conciergeInitial.php">Home</a></li>
                 <li><a href="./registerAuthorized.php">Cadastrar Autorizado</a></li>
                 <li><a href="./viewRecords.php">Visualizar Registos</a></li>
                 <li><a href="../model/logout.php">Encerrar Sessão</a></li>
@@ -57,7 +58,7 @@
             else
             {
                 echo "
-						<input class='btn btn-success' type='submit' id='#' name='checkin' value='Registrar Entrada'> 
+						<input type='submit' id='#' name='checkin' value='Registrar Entrada'> 
 					</form> </main>";	
             }       
         }         
