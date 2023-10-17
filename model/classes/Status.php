@@ -17,7 +17,7 @@ class Status
 			{
 				if($situacao == "Aberto"){
 					$tableInput.="
-					<form class='register' action='checkout.php' method='post'>
+					<form action='checkout.php' method='post'>
 							
 						<input type='hidden' name='lab' value='$lab' required>
 												
@@ -30,7 +30,7 @@ class Status
 					</form>       ";
 				}else if($situacao == "Fechado"){
 					$tableInput.=" 
-					<form class='register' action='checkin.php' method='post'>
+					<form action='checkin.php' method='post'>
 							
 						<input type='hidden' name='lab' value='$lab' required>  
 

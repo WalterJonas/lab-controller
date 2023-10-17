@@ -117,7 +117,9 @@
   }
 
   /*Tela Principal*/
-  
+li{
+  text-decoration: underline #fff;
+}
 
 main{
   height: 90vh;
