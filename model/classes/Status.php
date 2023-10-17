@@ -16,14 +16,31 @@ class Status
 			while(list($lab, $situacao)=$sql->fetch())
 			{
 				if($situacao == "Aberto"){
-					$tableInput.="           	
-					<div class='filho'><p>Sala: $lab</p>
-					<img src='./img/escudo.png' alt='aberto'></div>			      
-		       		";
+					$tableInput.="
+					<form class='register' action='checkout.php' method='post'>
+							
+						<input type='hidden' name='lab' value='$lab' required>
+												
+						<div class='filho'><p>Sala: $lab</p>
+							<button type='submit' name='labSearchforout'>	
+								<img src='./img/escudo.png' alt='aberto'>
+							</button>	 
+						</div>
+						     
+					</form>       ";
 				}else if($situacao == "Fechado"){
-					$tableInput.="           	
-					<div class='filho'><p>Sala: $lab</p>
-					<img src='./img/fechadas.png' alt='aberto'></div>			      
+					$tableInput.=" 
+					<form class='register' action='checkin.php' method='post'>
+							
+						<input type='hidden' name='lab' value='$lab' required>  
+
+						<div class='filho'><p>Sala: $lab</p>
+							<button type='submit' name='labSearchforint'>	
+								<img src='./img/fechadas.png' alt='aberto'>	
+							</button>
+						</div>
+
+					</form>         
 		       		";
 				}
 			}
