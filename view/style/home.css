@@ -117,7 +117,7 @@
   }
 
   /*Tela Principal*/
-li{
+li:nth-child(1){
   text-decoration: underline #fff;
 }
 
